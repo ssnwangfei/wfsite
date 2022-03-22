@@ -11,4 +11,4 @@ def index(request):
         'name': 'The World',
         'message': 'hello',
     }
-    return render(request, 'main\index.html', context)
+    return render(request, 'main/index.html', context)
