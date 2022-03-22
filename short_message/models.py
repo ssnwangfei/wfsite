@@ -1,18 +1,14 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
-class User(models.Model):
-    id = models.IntegerField(primary_key=True, unique = True)
-    name = models.CharField(max_length=30, unique = True)
-    desc = models.CharField(max_length=100)
-    create_date = models.DateTimeField('date created')
 
-
-class message(models.Model):
-    from_user = models.ForeignKey(User, on_delete=models.CASCADE)
-    to_user = models.ForeignKey(User, on_delete=models.CASCADE)
+class Message(models.Model):
+    """
+    用户发送的消息
+    """
+    user_from = models.ForeignKey(User, on_delete=models.CASCADE, related_name="users_from")
+    user_to = models.ForeignKey(User, on_delete=models.CASCADE, related_name="users_to")
+    tag = models.CharField('app tag', max_length=10)
     message = models.CharField(max_length=1000)
-    tag = models.CharField(max_length=10)
-    send_date = models.DateTimeField('date created')
-    recv_count = models.IntegerField(default=0)
+    date = models.DateTimeField('date created')

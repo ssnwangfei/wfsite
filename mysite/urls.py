@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('short_message/', include('short_message.urls')),
     path('admin/', admin.site.urls),
+    path('', include('main.urls')),
 ]

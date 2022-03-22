@@ -3,12 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
-
 from os import environ
-
-
-#global a
 a = 0
+
+
 def index(request):
     global a
     a = a + 1
@@ -21,7 +19,8 @@ def index(request):
     </head>
     <body background-color=red>
         <font color=blue>
-            this is a test page {str(a)}
+            this is a test page<br/>
+            global variable a is: {str(a)}
         </font>
 
     </body>
