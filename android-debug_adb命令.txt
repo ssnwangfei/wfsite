@@ -1,0 +1,28 @@
+abd devices ：列出设备
+
+如果多个设备，以下命令要加  -s <序列号>
+adb install -r <apk文件> ：安装app，-r覆盖安装
+adb uninstall 包名 ：卸载
+adb pull </sdcard/...> :下载文件
+adb push <local> <remote>: 上传文件
+adb shell pm clear com.example.packagename ：清空缓存
+adb shell pm list packages : 列出所有包
+adb shell input text “insert%stext%shere” : 输出
+adb shell input tap x y : 点击
+adb shell input swipe x1 y1 x2 y2 time ：手势滑动，整个过程time时间
+adb shell input keyevent 25 : 点击按钮，25就减小音量
+adb shell am start 包名/com.package.name.ActivityName -e name value : 启动Activity，参数name,value
+        除了默认启动的activity外，打开其他的activity时，需要在清单文件中添加android:exported="true"属性
+        要启动一个隐式的Intent，也就是说需要传入action等参数，在ADB调试桥中可以得知Intent的参数规范，比如**-a表示action**,-c表示category,-d表示data_uri,-e表示添加额外Key-Value信息。例如：
+        adb shell am start -a "android.intent.action.VIEW" -d "http://wangfei0422.pythonanywhere.com"
+adb shell am broadcast -a "android.intent.action.BOOT_COMPLETED" : 发送广播，重启手机
+adb shell am startservice "com.example.crime/com.example.crime.MyService" : 启动服务
+adb logcat ：日志
+adb shell service list : 列出能查询信息的服务
+adb shell dumpsys power : 查询信息
+adb shell screencap <路径> : 屏幕截图
+adb shell screenrecord /sdcard/demo.mp4 : 录屏
+adb shell ps : 查看进程信息
+adb shell top : CUP使用情况
+
+
