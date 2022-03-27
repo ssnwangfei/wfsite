@@ -1,2 +1,2 @@
-company:  https://oauth2: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@github.com/ssnwangfei/wfsite.git
-home:   https://oauth2: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@github.com/ssnwangfei/wfsite.git
+company:
+home:   https://oauth2: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@github.com/ssnwangfei/wfsite.git
